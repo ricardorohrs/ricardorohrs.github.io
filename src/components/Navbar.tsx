@@ -4,6 +4,11 @@ import { Languages, Menu, Moon, Sun, X } from "lucide-react";
 import { useI18n } from "@/i18n/context";
 import { useTheme } from "@/theme/context";
 
+const localeFlag: Record<"pt-BR" | "en", string> = {
+  "pt-BR": "🇧🇷",
+  en: "🇺🇸",
+};
+
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -47,13 +52,15 @@ const Navbar = () => {
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
-            <a
+            <motion.a
               key={item.label}
               href={item.href}
               className="font-mono text-sm text-muted-foreground hover:text-primary transition-colors"
+              whileHover={{ y: -1 }}
+              whileTap={{ scale: 0.99 }}
             >
               {item.label}
-            </a>
+            </motion.a>
           ))}
         </div>
 
@@ -64,7 +71,8 @@ const Navbar = () => {
             whileTap={{ scale: 0.97 }}
             onClick={toggleTheme}
             className="inline-flex items-center justify-center w-10 h-10 rounded-lg border border-border bg-card/50 hover:border-primary/50 transition-colors"
-            aria-label={resolvedTheme === "dark" ? "Ativar tema claro" : "Ativar tema escuro"}
+            aria-label={resolvedTheme === "dark" ? t("ui.theme.switchToLight") : t("ui.theme.switchToDark")}
+            title={resolvedTheme === "dark" ? t("ui.theme.darkMode") : t("ui.theme.lightMode")}
           >
             {resolvedTheme === "dark" ? (
               <Sun className="w-5 h-5 text-muted-foreground" />
@@ -79,9 +87,15 @@ const Navbar = () => {
             whileTap={{ scale: 0.97 }}
             onClick={() => setLocale(locale === "pt-BR" ? "en" : "pt-BR")}
             className="inline-flex items-center justify-center w-10 h-10 rounded-lg border border-border bg-card/50 hover:border-primary/50 transition-colors"
-            aria-label={locale === "pt-BR" ? "Switch language to English" : "Mudar idioma para português"}
+            aria-label={locale === "pt-BR" ? t("ui.language.switchToEn") : t("ui.language.switchToPt")}
+            title={locale === "pt-BR" ? t("ui.language.pt") : t("ui.language.en")}
           >
-            <Languages className="w-5 h-5 text-muted-foreground" />
+            <span className="text-lg leading-none" aria-hidden="true">
+              {localeFlag[locale]}
+            </span>
+            <span className="sr-only">
+              <Languages className="w-5 h-5" />
+            </span>
           </motion.button>
         </div>
 
@@ -111,9 +125,8 @@ const Navbar = () => {
               <div className="flex items-center gap-2">
                 <button
                   type="button"
-                  onClick={() => {
-                    toggleTheme();
-                  }}
+                  onClick={toggleTheme}
+                  title={resolvedTheme === "dark" ? t("ui.theme.darkMode") : t("ui.theme.lightMode")}
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-border bg-card/50 hover:border-primary/50 transition-colors font-mono text-sm text-muted-foreground hover:text-primary"
                 >
                   {resolvedTheme === "dark" ? (
@@ -121,16 +134,17 @@ const Navbar = () => {
                   ) : (
                     <Moon className="w-4 h-4" />
                   )}
-                  {resolvedTheme === "dark" ? "Light" : "Dark"}
+                  {resolvedTheme === "dark" ? t("ui.theme.lightMode") : t("ui.theme.darkMode")}
                 </button>
 
                 <button
                   type="button"
                   onClick={() => setLocale(locale === "pt-BR" ? "en" : "pt-BR")}
+                  title={locale === "pt-BR" ? t("ui.language.pt") : t("ui.language.en")}
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-border bg-card/50 hover:border-primary/50 transition-colors font-mono text-sm text-muted-foreground hover:text-primary"
                 >
-                  <Languages className="w-4 h-4" />
-                  {locale === "pt-BR" ? "EN" : "PT"}
+                  <span aria-hidden="true">{localeFlag[locale]}</span>
+                  {locale === "pt-BR" ? "English" : "Português"}
                 </button>
               </div>
 

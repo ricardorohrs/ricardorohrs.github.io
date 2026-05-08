@@ -5,20 +5,20 @@ import { useI18n } from "@/i18n/context";
 const highlights = [
   {
     icon: Code2,
-    title: "Full Stack",
-    desc: "Desenvolvimento completo do backend ao frontend com tecnologias modernas.",
+    titleKey: "about.card.fullstack.title",
+    descKey: "about.card.fullstack.desc",
   },
   {
     icon: Globe,
-    title: "Web Moderno",
-    desc: "Aplicações responsivas, performáticas e com ótima experiência de usuário.",
+    titleKey: "about.card.web.title",
+    descKey: "about.card.web.desc",
   },
   {
     icon: Layers,
-    title: "Arquitetura",
-    desc: "Código limpo, escalável e seguindo as melhores práticas do mercado.",
+    titleKey: "about.card.arch.title",
+    descKey: "about.card.arch.desc",
   },
-];
+] as const;
 
 const AboutSection = () => {
   const shouldReduceMotion = useReducedMotion();
@@ -58,7 +58,7 @@ const AboutSection = () => {
         <div className="grid md:grid-cols-3 gap-6">
           {highlights.map((item, i) => (
             <motion.div
-              key={item.title}
+              key={item.titleKey}
               initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 30 }}
               whileInView={shouldReduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -66,11 +66,13 @@ const AboutSection = () => {
                 duration: shouldReduceMotion ? 0 : 0.5,
                 delay: shouldReduceMotion ? 0 : i * 0.15,
               }}
-              className="group p-6 rounded-xl border border-border bg-card hover:border-primary/50 transition-all duration-300"
+              whileHover={shouldReduceMotion ? undefined : { y: -4 }}
+              whileTap={shouldReduceMotion ? undefined : { scale: 0.99 }}
+              className="group p-6 rounded-xl border border-border bg-card hover:border-primary/50 transition-all duration-300 focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2 focus-within:ring-offset-background"
             >
               <item.icon className="w-8 h-8 text-primary mb-4 group-hover:drop-shadow-[0_0_8px_hsl(165_80%_48%/0.5)] transition-all" />
-              <h3 className="font-mono font-semibold text-lg mb-2">{item.title}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
+              <h3 className="font-mono font-semibold text-lg mb-2">{t(item.titleKey)}</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">{t(item.descKey)}</p>
             </motion.div>
           ))}
         </div>

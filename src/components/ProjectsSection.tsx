@@ -5,41 +5,41 @@ import { useI18n } from "@/i18n/context";
 const projects = [
   {
     name: "AppEstat",
-    desc: "Aplicativo de estatística sobre análise exploratória de dados.",
+    descKey: "projects.appestat.desc",
     tech: ["JavaScript"],
     github: "https://github.com/ricardorohrs/AppEstat",
   },
   {
     name: "Happy",
-    desc: "Plataforma desenvolvida durante a Next Level Week da Rocketseat.",
+    descKey: "projects.happy.desc",
     tech: ["TypeScript", "React", "Node.js"],
     github: "https://github.com/ricardorohrs/Happy",
   },
   {
     name: "ToDoList",
-    desc: "Aplicação de tarefas construída com Laravel e Vue.js.",
+    descKey: "projects.todolist.desc",
     tech: ["PHP", "Laravel", "Vue.js"],
     github: "https://github.com/ricardorohrs/ToDoList",
   },
   {
     name: "RGB-Pattern",
-    desc: "Aplicativo gamificado para auxiliar no aprendizado de Padrões de Projeto.",
+    descKey: "projects.rgbpattern.desc",
     tech: ["TypeScript"],
     github: "https://github.com/ricardorohrs/RGB-Pattern",
   },
   {
     name: "Flappy Game",
-    desc: "Estudo e desenvolvimento de um jogo utilizando a engine Godot.",
+    descKey: "projects.flappy.desc",
     tech: ["GDScript", "Godot"],
     github: "https://github.com/ricardorohrs/Flappy-Game",
   },
   {
     name: "Cine55",
-    desc: "Projeto colaborativo para sistema de cinema.",
+    descKey: "projects.cine55.desc",
     tech: ["Web"],
     github: "https://github.com/ricardorohrs/cine55",
   },
-];
+] as const;
 
 const ProjectsSection = () => {
   const shouldReduceMotion = useReducedMotion();
@@ -85,7 +85,9 @@ const ProjectsSection = () => {
                 duration: shouldReduceMotion ? 0 : 0.5,
                 delay: shouldReduceMotion ? 0 : i * 0.1,
               }}
-              className="group p-6 rounded-xl border border-border bg-card hover:border-primary/50 transition-all duration-300 cursor-pointer"
+              whileHover={shouldReduceMotion ? undefined : { y: -4 }}
+              whileTap={shouldReduceMotion ? undefined : { scale: 0.99 }}
+              className="group p-6 rounded-xl border border-border bg-card hover:border-primary/50 transition-all duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               <div className="flex items-start justify-between mb-3">
                 <h3 className="font-mono font-semibold text-lg group-hover:text-primary transition-colors">
@@ -97,7 +99,7 @@ const ProjectsSection = () => {
                 </div>
               </div>
               <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
-                {project.desc}
+                {t(project.descKey)}
               </p>
               <div className="flex flex-wrap gap-2">
                 {project.tech.map((t) => (

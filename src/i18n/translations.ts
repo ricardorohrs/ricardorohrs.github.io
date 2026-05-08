@@ -12,6 +12,15 @@ export const translations: Dictionary = {
   "nav.main": { "pt-BR": "Navegação principal", en: "Main navigation" },
   "nav.goTop": { "pt-BR": "Ir para o topo", en: "Go to top" },
 
+  "ui.theme.lightMode": { "pt-BR": "light mode", en: "light mode" },
+  "ui.theme.darkMode": { "pt-BR": "dark mode", en: "dark mode" },
+  "ui.theme.switchToLight": { "pt-BR": "Ativar tema claro", en: "Switch to light mode" },
+  "ui.theme.switchToDark": { "pt-BR": "Ativar tema escuro", en: "Switch to dark mode" },
+  "ui.language.switchToPt": { "pt-BR": "Mudar idioma para português", en: "Switch language to Portuguese" },
+  "ui.language.switchToEn": { "pt-BR": "Switch language to English", en: "Switch language to English" },
+  "ui.language.pt": { "pt-BR": "Português", en: "Portuguese" },
+  "ui.language.en": { "pt-BR": "Inglês", en: "English" },
+
   "hero.role": { "pt-BR": "Desenvolvedor Full Stack", en: "Full Stack Developer" },
   "hero.summary": {
     "pt-BR":
@@ -25,7 +34,22 @@ export const translations: Dictionary = {
   "about.body": {
     "pt-BR":
       "Sou Desenvolvedor Full Stack em Porto Alegre, RS, com foco em aplicações web e APIs bem estruturadas. Formado pela UFSM, gosto de transformar requisitos em soluções simples, performáticas e fáceis de manter — do backend ao frontend.",
-    en: "I'm a Full Stack Developer based in Porto Alegre, Brazil, focused on web applications and well-structured APIs. I graduated from UFSM and enjoy turning requirements into simple, performant, maintainable solutions—from backend to frontend.",
+    en: "I'm a Full Stack Developer based in Porto Alegre, Brazil, focused on web applications and well-structured APIs. I graduated from UFSM and enjoy turning requirements into simple, performant, maintainable solutions — from backend to frontend.",
+  },
+  "about.card.fullstack.title": { "pt-BR": "Full Stack", en: "Full stack" },
+  "about.card.fullstack.desc": {
+    "pt-BR": "Do backend ao frontend, com foco em performance, manutenibilidade e entrega contínua.",
+    en: "From backend to frontend, focused on performance, maintainability, and continuous delivery.",
+  },
+  "about.card.web.title": { "pt-BR": "Web Moderno", en: "Modern web" },
+  "about.card.web.desc": {
+    "pt-BR": "Interfaces responsivas, acessíveis e com boa experiência de uso em diferentes dispositivos.",
+    en: "Responsive, accessible interfaces with a great experience across devices.",
+  },
+  "about.card.arch.title": { "pt-BR": "Arquitetura", en: "Architecture" },
+  "about.card.arch.desc": {
+    "pt-BR": "Código limpo, padrões consistentes e decisões técnicas pragmáticas para escalar com segurança.",
+    en: "Clean code, consistent patterns, and pragmatic technical decisions to scale safely.",
   },
 
   "skills.kicker": { "pt-BR": "// Habilidades", en: "// Skills" },
@@ -44,6 +68,30 @@ export const translations: Dictionary = {
     en: "A few public GitHub projects focused on web development, best practices and continuous learning. Click to open the repository and implementation details.",
   },
   "projects.openProject": { "pt-BR": "Abrir projeto {{name}} no GitHub", en: "Open {{name}} on GitHub" },
+  "projects.appestat.desc": {
+    "pt-BR": "Aplicativo de estatística sobre análise exploratória de dados.",
+    en: "Statistics app focused on exploratory data analysis.",
+  },
+  "projects.happy.desc": {
+    "pt-BR": "Plataforma desenvolvida durante a Next Level Week da Rocketseat.",
+    en: "Platform built during Rocketseat’s Next Level Week.",
+  },
+  "projects.todolist.desc": {
+    "pt-BR": "Aplicação de tarefas construída com Laravel e Vue.js.",
+    en: "Task application built with Laravel and Vue.js.",
+  },
+  "projects.rgbpattern.desc": {
+    "pt-BR": "Aplicativo gamificado para auxiliar no aprendizado de Padrões de Projeto.",
+    en: "Gamified app to support learning Design Patterns.",
+  },
+  "projects.flappy.desc": {
+    "pt-BR": "Estudo e desenvolvimento de um jogo utilizando a engine Godot.",
+    en: "Study and development of a game using the Godot engine.",
+  },
+  "projects.cine55.desc": {
+    "pt-BR": "Projeto colaborativo para sistema de cinema.",
+    en: "Collaborative project for a cinema system.",
+  },
 
   "contact.kicker": { "pt-BR": "// Contato", en: "// Contact" },
   "contact.title": { "pt-BR": "Vamos conversar?", en: "Let's talk?" },
