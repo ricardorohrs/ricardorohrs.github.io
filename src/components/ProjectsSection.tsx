@@ -1,5 +1,6 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
+import { useI18n } from "@/i18n/context";
 
 const projects = [
   {
@@ -42,6 +43,7 @@ const projects = [
 
 const ProjectsSection = () => {
   const shouldReduceMotion = useReducedMotion();
+  const { t } = useI18n();
 
   return (
     <section
@@ -58,14 +60,13 @@ const ProjectsSection = () => {
           className="mb-16"
         >
           <span className="font-mono text-sm text-primary tracking-widest uppercase">
-            // Projetos
+            {t("projects.kicker")}
           </span>
           <h2 id="projetos-titulo" className="text-3xl md:text-4xl font-bold font-mono mt-3">
-            Trabalhos em destaque<span className="text-primary">.</span>
+            {t("projects.title")}
           </h2>
           <p className="text-muted-foreground text-lg mt-5 max-w-3xl leading-relaxed">
-            Alguns projetos públicos no GitHub com foco em desenvolvimento web, boas práticas e
-            aprendizado contínuo. Clique para ver o repositório e detalhes de implementação.
+            {t("projects.subtitle")}
           </p>
         </motion.div>
 
@@ -76,7 +77,7 @@ const ProjectsSection = () => {
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={`Abrir projeto ${project.name} no GitHub`}
+              aria-label={t("projects.openProject", { name: project.name })}
               initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 30 }}
               whileInView={shouldReduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
               viewport={{ once: true }}

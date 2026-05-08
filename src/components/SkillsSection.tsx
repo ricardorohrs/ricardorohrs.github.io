@@ -1,4 +1,5 @@
 import { motion, useReducedMotion } from "framer-motion";
+import { useI18n } from "@/i18n/context";
 
 const skillCategories = [
   {
@@ -17,6 +18,7 @@ const skillCategories = [
 
 const SkillsSection = () => {
   const shouldReduceMotion = useReducedMotion();
+  const { t } = useI18n();
 
   return (
     <section id="skills" aria-labelledby="skills-titulo" className="py-24 px-6 border-t border-border">
@@ -29,14 +31,13 @@ const SkillsSection = () => {
           className="mb-16"
         >
           <span className="font-mono text-sm text-primary tracking-widest uppercase">
-            // Habilidades
+            {t("skills.kicker")}
           </span>
           <h2 id="skills-titulo" className="text-3xl md:text-4xl font-bold font-mono mt-3">
-            Tech Stack<span className="text-primary">.</span>
+            {t("skills.title")}
           </h2>
           <p className="text-muted-foreground text-lg mt-5 max-w-3xl leading-relaxed">
-            Tecnologias e ferramentas que uso no dia a dia para entregar interfaces modernas, APIs
-            consistentes e ambientes de desenvolvimento/produção confiáveis.
+            {t("skills.subtitle")}
           </p>
         </motion.div>
 

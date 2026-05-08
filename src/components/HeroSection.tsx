@@ -1,6 +1,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { Github, Linkedin, Mail, MapPin, ChevronDown, LucideGitlab } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import { useI18n } from "@/i18n/context";
 
 const socials = [
   { icon: Github, href: "https://github.com/ricardorohrs", label: "GitHub" },
@@ -11,6 +12,7 @@ const socials = [
 
 const HeroSection = () => {
   const shouldReduceMotion = useReducedMotion();
+  const { t } = useI18n();
 
   return (
     <section
@@ -40,7 +42,7 @@ const HeroSection = () => {
           className="mb-6"
         >
           <span className="font-mono text-sm tracking-widest text-primary uppercase">
-            Desenvolvedor Full Stack
+            {t("hero.role")}
           </span>
         </motion.div>
 
@@ -61,7 +63,7 @@ const HeroSection = () => {
           transition={{ duration: shouldReduceMotion ? 0 : 0.7, delay: shouldReduceMotion ? 0 : 0.3 }}
           className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-4"
         >
-          Desenvolvedor Full Stack apaixonado por construir soluções web modernas e escaláveis.
+          {t("hero.summary")}
         </motion.p>
 
         <motion.div
@@ -71,7 +73,7 @@ const HeroSection = () => {
           className="flex items-center justify-center gap-2 text-sm text-muted-foreground mb-10"
         >
           <MapPin className="w-4 h-4 text-primary" />
-          <span>Porto Alegre, RS — Brasil</span>
+          <span>{t("hero.location")}</span>
         </motion.div>
 
         <motion.div

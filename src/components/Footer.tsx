@@ -1,4 +1,8 @@
+import { useI18n } from "@/i18n/context";
+
 const Footer = () => {
+  const { t } = useI18n();
+
   return (
     <footer className="py-8 px-6 border-t border-border">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
@@ -8,7 +12,7 @@ const Footer = () => {
           © {new Date().getFullYear()}
         </span>
         <span className="font-mono text-xs text-muted-foreground">
-          Feito com <span className="text-primary">♥</span> em Porto Alegre
+          {t("footer.madeIn")}
         </span>
       </div>
     </footer>

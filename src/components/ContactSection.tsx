@@ -1,5 +1,6 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { Github, Linkedin, Mail, Instagram, LucideGitlab } from "lucide-react";
+import { useI18n } from "@/i18n/context";
 
 const links = [
   { icon: Github, href: "https://github.com/ricardorohrs", label: "GitHub" },
@@ -11,6 +12,7 @@ const links = [
 
 const ContactSection = () => {
   const shouldReduceMotion = useReducedMotion();
+  const { t } = useI18n();
 
   return (
     <section id="contato" aria-labelledby="contato-titulo" className="py-24 px-6 border-t border-border">
@@ -22,13 +24,13 @@ const ContactSection = () => {
           transition={{ duration: shouldReduceMotion ? 0 : 0.6 }}
         >
           <span className="font-mono text-sm text-primary tracking-widest uppercase">
-            // Contato
+            {t("contact.kicker")}
           </span>
           <h2 id="contato-titulo" className="text-3xl md:text-4xl font-bold font-mono mt-3 mb-6">
-            Vamos conversar<span className="text-primary">?</span>
+            {t("contact.title")}
           </h2>
           <p className="text-muted-foreground text-lg mb-12">
-            Estou aberto a novas oportunidades e colaborações. Entre em contato!
+            {t("contact.body")}
           </p>
         </motion.div>
 
@@ -47,7 +49,7 @@ const ContactSection = () => {
               key={label}
               href={href}
               target="_blank"
-              rel={href.startsWith("mailto:") ? undefined : "me noopener noreferrer"}
+              rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
               className="group flex items-center gap-3 px-5 py-3 rounded-lg border border-border bg-card hover:border-primary hover:text-primary transition-all duration-300"
             >
               <Icon className="w-5 h-5" />

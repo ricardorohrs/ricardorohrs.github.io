@@ -1,5 +1,6 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { Code2, Globe, Layers } from "lucide-react";
+import { useI18n } from "@/i18n/context";
 
 const highlights = [
   {
@@ -21,6 +22,7 @@ const highlights = [
 
 const AboutSection = () => {
   const shouldReduceMotion = useReducedMotion();
+  const { t } = useI18n();
 
   return (
     <section id="sobre" aria-labelledby="sobre-titulo" className="py-24 px-6">
@@ -33,10 +35,10 @@ const AboutSection = () => {
           className="mb-16"
         >
           <span className="font-mono text-sm text-primary tracking-widest uppercase">
-            // Sobre mim
+            {t("about.kicker")}
           </span>
           <h2 id="sobre-titulo" className="text-3xl md:text-4xl font-bold font-mono mt-3">
-            Quem sou eu<span className="text-primary">.</span>
+            {t("about.title")}
           </h2>
         </motion.div>
 
@@ -50,11 +52,7 @@ const AboutSection = () => {
           }}
           className="text-muted-foreground text-lg leading-relaxed max-w-3xl mb-16"
         >
-          Sou Desenvolvedor Full Stack em Porto Alegre, RS, com foco em{" "}
-          <span className="text-foreground font-medium">aplicações web</span> e{" "}
-          <span className="text-foreground font-medium">APIs</span> bem estruturadas. Formado pela{" "}
-          <span className="text-foreground font-medium">UFSM</span>, gosto de transformar requisitos em
-          soluções simples, performáticas e fáceis de manter — do backend ao frontend.
+          {t("about.body")}
         </motion.p>
 
         <div className="grid md:grid-cols-3 gap-6">
