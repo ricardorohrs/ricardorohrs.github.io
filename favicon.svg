@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2ef2c2"/>
+      <stop offset="1" stop-color="#00c2ff"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="112" height="112" rx="28" fill="#0b111a"/>
+  <rect x="8" y="8" width="112" height="112" rx="28" fill="url(#g)" opacity="0.33"/>
+  <text
+    x="64"
+    y="75"
+    text-anchor="middle"
+    font-family="JetBrains Mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace"
+    font-size="40"
+    font-weight="700"
+    fill="url(#g)"
+  >
+    &lt;RR/&gt;
+  </text>
+</svg>
+
