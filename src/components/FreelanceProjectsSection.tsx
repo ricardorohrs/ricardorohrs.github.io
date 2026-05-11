@@ -20,6 +20,7 @@ const freelanceProjects = [
 ] as const;
 
 const FreelanceProjectsSection = () => {
+  const shouldReduceMotion = useReducedMotion();
   const { t } = useI18n();
 
   return (
@@ -30,10 +31,10 @@ const FreelanceProjectsSection = () => {
     >
       <div className="max-w-5xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 30 }}
+          whileInView={shouldReduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: shouldReduceMotion ? 0 : 0.6 }}
           className="mb-16"
         >
           <span className="font-mono text-sm text-primary tracking-widest uppercase flex items-center gap-2">
@@ -54,12 +55,15 @@ const FreelanceProjectsSection = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={t("freelance.openProject", { name: project.name })}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 30 }}
+              whileInView={shouldReduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              whileHover={{ y: -6, scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
+              transition={{
+                duration: shouldReduceMotion ? 0 : 0.5,
+                delay: shouldReduceMotion ? 0 : i * 0.1,
+              }}
+              whileHover={shouldReduceMotion ? undefined : { y: -6, scale: 1.02 }}
+              whileTap={shouldReduceMotion ? undefined : { scale: 0.98 }}
               className="group relative p-6 rounded-xl border border-border bg-card hover:border-primary/50 transition-all duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background overflow-hidden"
             >
               {/* Animating background gradient on hover */}
@@ -87,13 +91,16 @@ const FreelanceProjectsSection = () => {
                   {t(project.descKey)}
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  {project.tech.map((t) => (
-                    <span
+                  {project.tech.map((t, ti) => (
+                    <motion.span
                       key={t}
                       className="text-xs font-mono px-2 py-1 rounded bg-secondary text-primary/80 group-hover:bg-primary/20 transition-colors"
+                      initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0.6 }}
+                      whileHover={shouldReduceMotion ? undefined : { opacity: 1, scale: 1.05 }}
+                      transition={shouldReduceMotion ? undefined : { delay: ti * 0.05 }}
                     >
                       {t}
-                    </span>
+                    </motion.span>
                   ))}
                 </div>
               </div>

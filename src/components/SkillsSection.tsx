@@ -50,17 +50,15 @@ const SkillsSection = () => {
               viewport={{ once: true }}
               transition={{
                 duration: shouldReduceMotion ? 0 : 0.5,
-                delay: shouldReduceMotion ? 0 : ci * 0.15,
+                delay: shouldReduceMotion ? 0 : 0.15,
               }}
               whileHover={shouldReduceMotion ? undefined : { y: -4 }}
               className="group"
             >
-              <motion.h3
-                className="font-mono font-semibold text-primary mb-5 text-sm tracking-wider uppercase group-hover:text-accent transition-colors"
-                whileHover={shouldReduceMotion ? undefined : { letterSpacing: "0.2em" }}
-              >
+              <h3 className="font-mono font-semibold text-primary mb-5 text-sm tracking-wider uppercase">
                 {`{${cat.title}}`}
-              </motion.h3>
+              </h3>
+
               <div className="flex flex-wrap gap-2">
                 {cat.skills.map((skill, si) => (
                   <motion.span
