@@ -35,7 +35,6 @@ Este é meu portfólio profissional — uma aplicação web moderna e responsiva
 
 **Desenvolvimento:**
 - **ESLint** — Linting e análise de código
-- **Vitest** — Framework de testes unitários
 - **GitHub Pages** — Hospedagem estática
 
 
@@ -54,6 +53,7 @@ src/
 │   ├── HeroSection.tsx
 │   ├── AboutSection.tsx
 │   ├── SkillsSection.tsx
+│   ├── FreelanceProjectsSection.tsx
 │   ├── ProjectsSection.tsx
 │   ├── ContactSection.tsx
 │   └── Footer.tsx
@@ -73,6 +73,7 @@ src/
 - **Hero** — Apresentação inicial com chamada à ação
 - **Sobre** — Breve biografia e filosofia de trabalho
 - **Skills** — Tech stack e competências principais
+- **Freelas** — Trabalhos freelance com links externos 
 - **Projetos** — Trabalhos em destaque com links para GitHub
 - **Contato** — Canais de comunicação
 
