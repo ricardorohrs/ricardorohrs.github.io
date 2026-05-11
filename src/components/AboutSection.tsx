@@ -25,7 +25,7 @@ const AboutSection = () => {
   const { t } = useI18n();
 
   return (
-    <section id="sobre" aria-labelledby="sobre-titulo" className="py-24 px-6">
+    <section id="sobre" aria-labelledby="sobre-titulo" className="py-24 px-6 border-t border-border bg-card/20">
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 30 }}
@@ -66,12 +66,19 @@ const AboutSection = () => {
                 duration: shouldReduceMotion ? 0 : 0.5,
                 delay: shouldReduceMotion ? 0 : i * 0.15,
               }}
-              whileHover={shouldReduceMotion ? undefined : { y: -4 }}
-              whileTap={shouldReduceMotion ? undefined : { scale: 0.99 }}
-              className="group p-6 rounded-xl border border-border bg-card hover:border-primary/50 transition-all duration-300 focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2 focus-within:ring-offset-background"
+              whileHover={shouldReduceMotion ? undefined : { y: -6, scale: 1.02 }}
+              whileTap={shouldReduceMotion ? undefined : { scale: 0.98 }}
+              className="group relative p-6 rounded-xl border border-border bg-card hover:border-primary/50 transition-all duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background overflow-hidden"
             >
+              <motion.div
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                style={{
+                  background: "linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%)",
+                  opacity: 0.05,
+                }}
+              />
               <item.icon className="w-8 h-8 text-primary mb-4 group-hover:drop-shadow-[0_0_8px_hsl(165_80%_48%/0.5)] transition-all" />
-              <h3 className="font-mono font-semibold text-lg mb-2">{t(item.titleKey)}</h3>
+              <h3 className="font-mono font-semibold text-lg mb-2 group-hover:text-primary">{t(item.titleKey)}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">{t(item.descKey)}</p>
             </motion.div>
           ))}

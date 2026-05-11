@@ -104,12 +104,13 @@ const HeroSection = () => {
         transition={{ delay: shouldReduceMotion ? 0 : 1.2 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
       >
-        <motion.div
+        <motion.a
+          href="#sobre"
           animate={shouldReduceMotion ? undefined : { y: [0, 8, 0] }}
           transition={shouldReduceMotion ? undefined : { repeat: Infinity, duration: 2 }}
         >
           <ChevronDown className="w-6 h-6 text-muted-foreground" />
-        </motion.div>
+        </motion.a>
       </motion.div>
     </section>
   );
