@@ -1,5 +1,6 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { Github, Linkedin, Mail, MapPin, ChevronDown, LucideGitlab } from "lucide-react";
+import { TypeAnimation } from "react-type-animation";
 import heroBg from "@/assets/bg-hero.png";
 import { useI18n } from "@/i18n/context";
 
@@ -41,9 +42,17 @@ const HeroSection = () => {
           transition={{ duration: shouldReduceMotion ? 0 : 0.6 }}
           className="mb-6"
         >
-          <span className="font-mono text-sm tracking-widest text-primary uppercase">
-            {t("hero.role")}
-          </span>
+		  <TypeAnimation
+			sequence={[
+		      'Desenvolvedor Full Stack', 2500,
+			  'Desenvolvedor Backend', 2500,
+			  'Desenvolvedor Frontend', 2500,
+			]}
+			wrapper="span"
+			speed={shouldReduceMotion ? 75 : 25}
+			repeat={Infinity}
+			className="font-mono text-sm tracking-widest text-primary uppercase"
+		  />
         </motion.div>
 
         <motion.h1

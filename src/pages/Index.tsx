@@ -5,6 +5,7 @@ import SkillsSection from "@/components/SkillsSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import FreelanceProjectsSection from "@/components/FreelanceProjectsSection";
 import ContactSection from "@/components/ContactSection";
+import ScrollToTop from "@/components/ui/ScrollToTop";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -20,6 +21,7 @@ const Index = () => {
         <ContactSection />
       </main>
       <Footer />
+      <ScrollToTop />
     </div>
   );
 };

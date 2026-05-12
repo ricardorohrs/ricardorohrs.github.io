@@ -66,20 +66,20 @@ const FreelanceProjectsSection = () => {
                 duration: shouldReduceMotion ? 0 : 0.5,
                 delay: shouldReduceMotion ? 0 : i * 0.1,
               }}
-              whileHover={shouldReduceMotion ? undefined : { y: -6, scale: 1.02 }}
-              whileTap={shouldReduceMotion ? undefined : { scale: 0.98 }}
+              // whileHover={shouldReduceMotion ? undefined : { y: -6, scale: 1.02 }}
+              // whileTap={shouldReduceMotion ? undefined : { scale: 0.98 }}
               className="group relative p-0 rounded-xl border border-border bg-card hover:border-primary/50 transition-all duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background overflow-hidden flex flex-col"
             >
               {/* Project Image Container */}
               <div className="relative overflow-hidden bg-secondary">
                 <motion.img
                   src={project.image}
-                  alt={project.name}
-                  className="w-full h-full object-cover"
+                  alt={`Screenshot do site ${project.name}`}
+                  className="w-full h-full object-cover object-top"
                   whileHover={shouldReduceMotion ? undefined : { scale: 1.05 }}
-                  transition={{ duration: shouldReduceMotion ? 0 : 0.3 }}
+                  transition={{ duration: shouldReduceMotion ? 0 : 0.4, ease: "easeOut" }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                {/*<div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />*/}
               </div>
 
               {/* Animating background gradient on hover */}
