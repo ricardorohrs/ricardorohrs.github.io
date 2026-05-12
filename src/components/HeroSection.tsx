@@ -1,6 +1,6 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { Github, Linkedin, Mail, MapPin, ChevronDown, LucideGitlab } from "lucide-react";
-import heroBg from "@/assets/bg-hero (4).png";
+import heroBg from "@/assets/bg-hero.png";
 import { useI18n } from "@/i18n/context";
 
 const socials = [

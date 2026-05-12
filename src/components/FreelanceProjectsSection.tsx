@@ -1,6 +1,8 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import { useI18n } from "@/i18n/context";
+import rmAutomotiveImg from "@/assets/projects/rmautomotive.png";
+import sudoesteImg from "@/assets/projects/sudoeste.png";
 
 const freelanceProjects = [
   {
@@ -9,6 +11,7 @@ const freelanceProjects = [
     category: "Site",
     url: "https://rmautomotive.com.br/",
     tech: ["Web Design", "Frontend", "HTML", "CSS", "JavaScript"],
+    image: rmAutomotiveImg,
   },
   {
     name: "Sudoeste Engenharia",
@@ -16,6 +19,7 @@ const freelanceProjects = [
     category: "Site",
     url: "https://sudoeste.eng.br/",
     tech: ["Web Design", "WordPress", "Elementor", "Frontend"],
+    image: sudoesteImg,
   },
 ] as const;
 
@@ -64,8 +68,20 @@ const FreelanceProjectsSection = () => {
               }}
               whileHover={shouldReduceMotion ? undefined : { y: -6, scale: 1.02 }}
               whileTap={shouldReduceMotion ? undefined : { scale: 0.98 }}
-              className="group relative p-6 rounded-xl border border-border bg-card hover:border-primary/50 transition-all duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background overflow-hidden"
+              className="group relative p-0 rounded-xl border border-border bg-card hover:border-primary/50 transition-all duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background overflow-hidden flex flex-col"
             >
+              {/* Project Image Container */}
+              <div className="relative overflow-hidden bg-secondary">
+                <motion.img
+                  src={project.image}
+                  alt={project.name}
+                  className="w-full h-full object-cover"
+                  whileHover={shouldReduceMotion ? undefined : { scale: 1.05 }}
+                  transition={{ duration: shouldReduceMotion ? 0 : 0.3 }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+
               {/* Animating background gradient on hover */}
               <motion.div
                 className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
@@ -75,7 +91,7 @@ const FreelanceProjectsSection = () => {
                   opacity: 0.05,
                 }}
               />
-              <div className="relative z-10">
+              <div className="relative z-10 p-6 flex-1 flex flex-col">
                 <div className="flex items-start justify-between mb-3">
                   <div>
                     <h3 className="font-mono font-semibold text-lg group-hover:text-primary transition-colors">
@@ -87,7 +103,7 @@ const FreelanceProjectsSection = () => {
                   </div>
                   <ExternalLink className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                 </div>
-                <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
+                <p className="text-muted-foreground text-sm mb-4 leading-relaxed flex-1">
                   {t(project.descKey)}
                 </p>
                 <div className="flex flex-wrap gap-2">
