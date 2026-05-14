@@ -5,4 +5,4 @@ User-agent: Googlebot
 Allow: /
 Crawl-delay: 0
 
-Sitemap: https://ricardorohrs.github.io/portfolio/sitemap.xml
+Sitemap: https://ricardorohrs.github.io/sitemap.xml

@@ -60,9 +60,9 @@ const SkillsSection = () => {
               </h3>
 
               <p className="text-xs text-muted-foreground mb-4">
-                {cat.title === "Frontend" && "Interfaces modernas e responsivas"}
-                {cat.title === "Backend" && "APIs robustas e escaláveis"}
-                {cat.title === "Ferramentas" && "Desenvolvimento mais eficiente"}
+                {cat.title === "Backend" && t("skills.backend")}
+                {cat.title === "Frontend" && t("skills.frontend")}
+                {cat.title === "Ferramentas" && t("skills.tools")}
               </p>
 
               <div className="flex flex-wrap gap-2">

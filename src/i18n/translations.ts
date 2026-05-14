@@ -32,8 +32,12 @@ export const translations: Dictionary = {
   "about.kicker": { "pt-BR": "// Sobre mim", en: "// About" },
   "about.title": { "pt-BR": "Quem sou eu.", en: "About me." },
   "about.body": {
-    "pt-BR": "Sou Desenvolvedor Full Stack com foco em aplicações web e APIs bem estruturadas. Gaúcho, formado pela Universidade Federal de Santa Maria, atualmente moro em Porto Alegre, RS. Com experiência transformando requisitos em soluções simples, performáticas e fáceis de manter — do backend ao frontend.",
-    en: "I am a Full Stack Developer focused on web applications and well-structured APIs. Originally from Rio Grande do Sul, I graduated from the Federal University of Santa Maria and currently live in Porto Alegre, RS. I have experience transforming requirements into simple, high-performance, and easy-to-maintain solutions — from backend to frontend.",
+    "pt-BR": "Sou Desenvolvedor Full Stack com foco em aplicações web e APIs bem estruturadas. Gaúcho, formado pela Universidade Federal de Santa Maria, atualmente moro em Porto Alegre, RS. Com {highlight} transformando requisitos em soluções simples, performáticas e fáceis de manter — do backend ao frontend.",
+    en: "I am a Full Stack Developer focused on web applications and well-structured APIs. I graduated from the Federal University of Santa Maria and currently live in Porto Alegre, RS. With {highlight} transforming requirements into simple, high-performance, and easy-to-maintain solutions — from backend to frontend."
+  },
+  "about.body.highlight": {
+    "pt-BR": "mais de 6 anos de experiência",
+    en: "over 6 years of experience"
   },
   "about.card.fullstack.title": { "pt-BR": "Full Stack", en: "Full stack" },
   "about.card.fullstack.desc": {
@@ -57,6 +61,9 @@ export const translations: Dictionary = {
     "pt-BR": "Principais tecnologias e ferramentas que uso no dia a dia para entregar interfaces modernas, APIs consistentes e ambientes de desenvolvimento/produção confiáveis e eficientes.",
     en: "Key technologies and tools I use daily to ship modern interfaces, consistent APIs, and reliable and efficient dev/production environments.",
   },
+  "skills.frontend": { "pt-BR": "APIs robustas e escaláveis", en: "Robust and scalable APIs" },
+  "skills.backend": { "pt-BR": "Interfaces modernas e responsivas", en: "Modern and responsive interfaces" },
+  "skills.tools": { "pt-BR": "Desenvolvimento mais eficiente", en: "More efficient development" },
 
   "projects.kicker": { "pt-BR": "// Projetos", en: "// Projects" },
   "projects.title": { "pt-BR": "Trabalhos em destaque.", en: "Featured work." },

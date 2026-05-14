@@ -24,6 +24,10 @@ const AboutSection = () => {
   const shouldReduceMotion = useReducedMotion();
   const { t } = useI18n();
 
+  const body = t("about.body");
+  const highlight = t("about.body.highlight");
+  const parts = body.split("{highlight}");
+
   return (
     <section id="sobre" aria-labelledby="sobre-titulo" className="py-24 px-6 border-t border-border bg-card/20" itemScope itemType="https://schema.org/AboutPage">
       <div className="max-w-5xl mx-auto">
@@ -53,7 +57,9 @@ const AboutSection = () => {
           className="text-muted-foreground text-lg leading-relaxed max-w-5xl mb-16"
           itemProp="description"
         >
-          {t("about.body")}
+          {parts[0]}
+          <span className="font-semibold text-foreground">{highlight}</span>
+          {parts[1]}
         </motion.h3>
 
         <div className="grid md:grid-cols-3 gap-6">
