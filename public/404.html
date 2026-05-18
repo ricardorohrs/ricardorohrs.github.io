@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>404 — Ricardo Röhrs</title>
+
+    <!-- Fonte (mesma usada no site) -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Meta para GitHub Pages -->
+    <meta name="robots" content="noindex">
+
+    <style>
+      /* Variáveis principais (versão escura / aproximada do seu tema) */
+      :root{
+        --bg: #081019;
+        --card: #0b1116;
+        --muted: #9aa3b2;
+        --fg: #dbe7f3;
+        --primary: #1abf9c;
+        --accent: #00c7b7;
+        --radius: 12px;
+        --gradient: linear-gradient(135deg, #1abf9c 0%, #00c7b7 100%);
+        font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      }
+
+      html,body{
+        height:100%;
+        margin:0;
+        background: radial-gradient(1000px 500px at 10% 10%, rgba(26,188,156,0.06), transparent),
+                    radial-gradient(800px 400px at 90% 90%, rgba(0,199,183,0.03), transparent),
+                    var(--bg);
+        color:var(--fg);
+      }
+
+      .container {
+        min-height:100vh;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        padding-inline: 32px;
+      }
+
+      .card {
+        background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+        border:1px solid rgba(255,255,255,0.04);
+        backdrop-filter: blur(8px);
+        padding:32px;
+        border-radius:var(--radius);
+        max-width:980px;
+        width:100%;
+        box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+        display:flex;
+        gap:24px;
+        align-items:center;
+        justify-content:space-between;
+      }
+
+      .left {
+        flex:1;
+        min-width:0;
+      }
+
+      .code {
+        font-family: 'JetBrains Mono', monospace;
+        font-weight:700;
+        font-size:72px;
+        line-height:1;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      h1 {
+        margin:0 0 8px 0;
+        font-size:22px;
+        font-weight:700;
+        font-family: 'JetBrains Mono', monospace;
+      }
+
+      p {
+        margin:0 0 16px 0;
+        color:var(--muted);
+      }
+
+      .actions {
+        display:flex;
+        gap:12px;
+        flex-wrap:wrap;
+      }
+
+      .btn {
+        display:inline-flex;
+        align-items:center;
+        gap:8px;
+        padding:10px 14px;
+        border-radius:10px;
+        font-weight:600;
+        color:var(--fg);
+        background:transparent;
+        border:1px solid rgba(255,255,255,0.06);
+        text-decoration:none;
+        cursor:pointer;
+      }
+
+      .btn.primary {
+        background:var(--gradient);
+        color: #021016;
+        border: none;
+      }
+
+      .meta {
+        text-align:right;
+        min-width:220px;
+      }
+
+      .muted {
+        color:var(--muted);
+        font-size:13px;
+      }
+
+      a.small {
+        color:var(--muted);
+        font-size:13px;
+        display:block;
+        margin-top:12px;
+        text-decoration:none;
+      }
+
+      @media (max-width:720px){
+        .card { flex-direction:column; text-align:center; gap:16px; }
+        .meta { text-align:center; }
+        .code { font-size:54px; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="card" role="main" aria-labelledby="notfound-title">
+        <div class="left" aria-hidden="true">
+          <div class="code">404</div>
+        </div>
+
+        <div class="right" style="flex:2;">
+          <h1 id="notfound-title">Página não encontrada</h1>
+          <p class="muted">A página que você tentou acessar não existe ou foi removida.</p>
+
+          <div class="actions" role="group" aria-label="Ações">
+            <!-- Voltar pra home (fixo) -->
+            <a class="btn primary" href="/" title="Ir para a página inicial">Ir para o início</a>
+
+            <!-- Contato -->
+            <a class="btn" href="mailto:rerohrs@inf.ufsm.br" title="Entrar em contato">Contato</a>
+
+            <!-- GitHub -->
+            <a class="btn" href="https://github.com/ricardorohrs" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+
+          <a class="small" href="/" title="Voltar para home">← Voltar para a página inicial</a>
+        </div>
+
+        <div class="meta">
+          <div class="muted">Ricardo Röhrs</div>
+          <div style="margin-top:12px;font-size:13px;color:var(--muted)">Portfólio • Desenvolvedor Full Stack</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
