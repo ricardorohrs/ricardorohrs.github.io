@@ -12,6 +12,7 @@ export const translations: Dictionary = {
   "nav.closeMenu": { "pt-BR": "Fechar menu", en: "Close menu" },
   "nav.main": { "pt-BR": "Navegação principal", en: "Main navigation" },
   "nav.goTop": { "pt-BR": "Ir para o topo", en: "Go to top" },
+  "nav.websites": { "pt-BR": "Criar site", en: "Build a website" },
 
   "ui.theme.lightMode": { "pt-BR": "light mode", en: "light mode" },
   "ui.theme.darkMode": { "pt-BR": "dark mode", en: "dark mode" },
@@ -106,7 +107,8 @@ export const translations: Dictionary = {
     "pt-BR": "Procurando um desenvolvedor para seu próximo projeto? Vamos conversar!",
     en: "Looking for a developer for your next project? Let's talk!"
   },
-  "freelance.cta.button": { "pt-BR": "Solicitar Orçamento", en: "Request Quote" },
+  "freelance.cta.button": { "pt-BR": "Quero saber mais", en: "I want to know more" },
+  "freelance.cta.contact": { "pt-BR": "Entre em contato", en: "Get in Touch" },
   "freelance.openProject": { "pt-BR": "Visitar {{name}}", en: "Visit {{name}}" },
   "freelance.rmautomotive.desc": {
     "pt-BR": "Site para empresa de automação e soluções automotivas. Design responsivo com foco em apresentação de serviços.",
@@ -124,4 +126,152 @@ export const translations: Dictionary = {
   },
 
   "footer.madeIn": { "pt-BR": "Feito com ♥ em Porto Alegre", en: "Made with ♥ in Porto Alegre" },
+
+  "landing.websites.seo.title": {
+    "pt-BR": "Criação de Sites e Sistemas Web — Ricardo Röhrs",
+    en: "Websites & Web Systems — Ricardo Röhrs",
+  },
+  "landing.websites.seo.description": {
+    "pt-BR": "Criação de sites e sistemas web com foco em performance, SEO e acessibilidade. Landing pages, sites institucionais e aplicações web sob medida.",
+    en: "Websites and web systems focused on performance, SEO, and accessibility. Landing pages, institutional sites and custom web apps.",
+  },
+  "landing.websites.seo.ogTitle": {
+    "pt-BR": "Criação de Sites e Sistemas Web",
+    en: "Websites & Web Systems",
+  },
+  "landing.websites.seo.ogDescription": {
+    "pt-BR": "Sites rápidos, acessíveis e otimizados para SEO — com microinterações e ótima experiência em qualquer dispositivo.",
+    en: "Fast, accessible, SEO-optimized sites — with microinteractions and great UX on any device.",
+  },
+  "landing.websites.ld.name": { "pt-BR": "Criação de Sites", en: "Website Development" },
+  "landing.websites.ld.serviceType": { "pt-BR": "Desenvolvimento Web", en: "Web Development" },
+
+  "landing.websites.nav.services": { "pt-BR": "Serviços", en: "Services" },
+  "landing.websites.nav.process": { "pt-BR": "Processo", en: "Process" },
+  "landing.websites.nav.tech": { "pt-BR": "Stack", en: "Stack" },
+  "landing.websites.nav.faq": { "pt-BR": "FAQ", en: "FAQ" },
+  "landing.websites.nav.contact": { "pt-BR": "Contato", en: "Contact" },
+
+  "landing.websites.kicker": { "pt-BR": "// Criação de sites", en: "// Website development" },
+  "landing.websites.title.part1": { "pt-BR": "Sites e sistemas web", en: "Websites and web systems" },
+  "landing.websites.title.part2": { "pt-BR": "que convertem", en: "that convert" },
+  "landing.websites.subtitle": {
+    "pt-BR": "Do design à implementação: entrego landing pages, sites institucionais e sistemas web com foco em resultados, SEO, acessibilidade e performance.",
+    en: "From design to implementation: I build landing pages, institutional websites and web systems focused on results, SEO, accessibility and performance.",
+  },
+  "landing.websites.cta.primary": { "pt-BR": "Solicitar orçamento", en: "Request a quote" },
+  "landing.websites.cta.secondary": { "pt-BR": "Ver exemplos", en: "See examples" },
+
+  "landing.websites.badges.fast": { "pt-BR": "Carregamento rápido", en: "Fast loading" },
+  "landing.websites.badges.seo": { "pt-BR": "SEO técnico", en: "Technical SEO" },
+  "landing.websites.badges.accessible": { "pt-BR": "Acessível", en: "Accessible" },
+  "landing.websites.badges.responsive": { "pt-BR": "Responsivo", en: "Responsive" },
+
+  "landing.websites.services.kicker": { "pt-BR": "// O que você ganha", en: "// What you get" },
+  "landing.websites.services.title": { "pt-BR": "Um site pronto para crescer.", en: "A site built to grow." },
+  "landing.websites.services.subtitle": {
+    "pt-BR": "Entrega com base sólida: boas práticas, microinterações suaves e qualidade técnica para melhorar conversão e manutenção.",
+    en: "Shipped with a strong foundation: best practices, smooth microinteractions, and technical quality to improve conversion and maintainability.",
+  },
+
+  "landing.websites.features.seo.title": { "pt-BR": "SEO e indexação", en: "SEO & indexing" },
+  "landing.websites.features.seo.body": {
+    "pt-BR": "Estrutura semântica, metadados e boas práticas para ajudar seu site a ser encontrado.",
+    en: "Semantic structure, metadata and best practices to help your site get discovered.",
+  },
+  "landing.websites.features.performance.title": { "pt-BR": "Performance real", en: "Real performance" },
+  "landing.websites.features.performance.body": {
+    "pt-BR": "Otimização de assets, carregamento inteligente e foco em experiência rápida no mobile.",
+    en: "Asset optimization, smart loading and a fast mobile-first experience.",
+  },
+  "landing.websites.features.ux.title": { "pt-BR": "UX + acessibilidade", en: "UX + accessibility" },
+  "landing.websites.features.ux.body": {
+    "pt-BR": "Navegação clara, contrastes, foco visível e componentes que funcionam com teclado e leitor de tela.",
+    en: "Clear navigation, contrast, visible focus and components that work with keyboard and screen readers.",
+  },
+  "landing.websites.features.code.title": { "pt-BR": "Código organizado", en: "Clean code" },
+  "landing.websites.features.code.body": {
+    "pt-BR": "Padrões consistentes e base preparada para evoluir (novas páginas, integrações e automações).",
+    en: "Consistent patterns and a foundation ready to evolve (new pages, integrations and automations).",
+  },
+
+  "landing.websites.process.kicker": { "pt-BR": "// Como funciona", en: "// How it works" },
+  "landing.websites.process.title": { "pt-BR": "Do briefing ao deploy.", en: "From brief to launch." },
+  "landing.websites.process.subtitle": {
+    "pt-BR": "Um processo simples e transparente para tirar sua ideia do papel com previsibilidade.",
+    en: "A simple and transparent process to ship your project predictably.",
+  },
+  "landing.websites.process.discovery.title": { "pt-BR": "Briefing e objetivos", en: "Brief & goals" },
+  "landing.websites.process.discovery.body": {
+    "pt-BR": "Entendimento do negócio, público-alvo e metas (leads, vendas, autoridade).",
+    en: "Understand your business, audience and goals (leads, sales, authority).",
+  },
+  "landing.websites.process.design.title": { "pt-BR": "Estrutura e conteúdo", en: "Structure & content" },
+  "landing.websites.process.design.body": {
+    "pt-BR": "Arquitetura da informação, copy e layout com foco em clareza e conversão.",
+    en: "Information architecture, copy and layout focused on clarity and conversion.",
+  },
+  "landing.websites.process.build.title": { "pt-BR": "Implementação", en: "Build" },
+  "landing.websites.process.build.body": {
+    "pt-BR": "Desenvolvimento com componentes reutilizáveis, microinterações e performance.",
+    en: "Development with reusable components, microinteractions and performance.",
+  },
+  "landing.websites.process.launch.title": { "pt-BR": "Publicação e ajustes", en: "Launch & iterate" },
+  "landing.websites.process.launch.body": {
+    "pt-BR": "Deploy, checklist de SEO técnico e ajustes finais para ficar redondo.",
+    en: "Deploy, technical SEO checklist and final refinements.",
+  },
+  "landing.websites.process.badge1": { "pt-BR": "Checklists e entregáveis claros", en: "Clear checklists & deliverables" },
+  "landing.websites.process.badge2": { "pt-BR": "Foco em performance e UX", en: "Performance & UX focus" },
+  "landing.websites.process.badge3": { "pt-BR": "SEO técnico desde o início", en: "Technical SEO from day one" },
+
+  "landing.websites.stack.kicker": { "pt-BR": "// Qualidade técnica", en: "// Technical quality" },
+  "landing.websites.stack.title": { "pt-BR": "Base moderna e escalável.", en: "Modern, scalable foundation." },
+  "landing.websites.stack.subtitle": {
+    "pt-BR": "A stack é escolhida conforme a necessidade (site ou sistema). O objetivo é sempre: robustez, velocidade e manutenção simples.",
+    en: "The stack is chosen based on your needs (site or system). The goal is always: robustness, speed and easy maintenance.",
+  },
+  "landing.websites.stack.box1.title": { "pt-BR": "Frontend", en: "Frontend" },
+  "landing.websites.stack.box1.body": {
+    "pt-BR": "UI responsiva, semântica e acessível, com microinterações suaves e foco visível.",
+    en: "Responsive, semantic, accessible UI with smooth microinteractions and visible focus.",
+  },
+  "landing.websites.stack.box2.title": { "pt-BR": "Backend", en: "Backend" },
+  "landing.websites.stack.box2.body": {
+    "pt-BR": "APIs, integrações e automações para transformar um site em um sistema web completo.",
+    en: "APIs, integrations and automations to turn a website into a complete web system.",
+  },
+  "landing.websites.stack.box3.title": { "pt-BR": "SEO técnico", en: "Technical SEO" },
+  "landing.websites.stack.box3.body": {
+    "pt-BR": "Metatags, canonical, sitemap, dados estruturados e boas práticas de indexação.",
+    en: "Meta tags, canonical, sitemap, structured data and indexing best practices.",
+  },
+
+  "landing.websites.faq.kicker": { "pt-BR": "// Dúvidas comuns", en: "// Common questions" },
+  "landing.websites.faq.title": { "pt-BR": "Perguntas frequentes.", en: "FAQ." },
+  "landing.websites.faq.subtitle": {
+    "pt-BR": "Se quiser, eu respondo por e-mail ou mensagem com base no seu cenário.",
+    en: "If you want, I can answer by email or message based on your scenario.",
+  },
+  "landing.websites.faq.q1.q": { "pt-BR": "Você faz só site ou também sistema web?", en: "Do you build only websites or also web systems?" },
+  "landing.websites.faq.q1.a": {
+    "pt-BR": "Faço ambos. Pode ser uma landing page enxuta ou um sistema completo com login, áreas restritas e integrações.",
+    en: "Both. It can be a lean landing page or a complete system with login, restricted areas and integrations.",
+  },
+  "landing.websites.faq.q2.q": { "pt-BR": "Quanto tempo leva?", en: "How long does it take?" },
+  "landing.websites.faq.q2.a": {
+    "pt-BR": "Depende do escopo. Em geral, uma landing page pode sair em poucos dias; sites maiores e sistemas variam conforme conteúdo e integrações.",
+    en: "It depends on scope. A landing page can take a few days; larger sites and systems vary with content and integrations.",
+  },
+  "landing.websites.faq.q3.q": { "pt-BR": "Você cuida de SEO?", en: "Do you handle SEO?" },
+  "landing.websites.faq.q3.a": {
+    "pt-BR": "Sim — foco em SEO técnico (estrutura, metadados, performance). SEO de conteúdo pode ser combinado conforme necessidade.",
+    en: "Yes — focused on technical SEO (structure, metadata, performance). Content SEO can be included if needed.",
+  },
+  "landing.websites.faq.q4.q": { "pt-BR": "E manutenção depois?", en: "What about maintenance after launch?" },
+  "landing.websites.faq.q4.a": {
+    "pt-BR": "Posso fazer ajustes pontuais, evoluções e monitorar melhorias contínuas (performance/UX/SEO) conforme combinarmos.",
+    en: "I can do ongoing improvements, small changes and continuous optimization (performance/UX/SEO) as agreed.",
+  },
+  "landing.websites.faq.cta": { "pt-BR": "Falar sobre meu projeto", en: "Talk about my project" },
 };

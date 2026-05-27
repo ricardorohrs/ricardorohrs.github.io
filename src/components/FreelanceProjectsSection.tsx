@@ -139,12 +139,24 @@ const FreelanceProjectsSection = () => {
           <p className="text-muted-foreground mb-6">
             {t("freelance.cta.label")}
           </p>
-          <a
-            href="#contato"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-primary bg-primary/10 text-primary hover:bg-primary/20 transition-all duration-300 font-mono text-sm"
-          >
-            {t("freelance.cta.button")}
-          </a>
+
+          <div className="flex flex-wrap gap-2 inline-flex flex-wrap items-center">
+            <a
+              href="/criacao-de-sites"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-primary bg-primary/10 text-primary hover:bg-primary/20 transition-all duration-300 font-mono text-sm"
+            >
+              {t("freelance.cta.button")}
+            </a>
+
+            <a
+              href="#contato"
+              className="font-mono text-sm px-6 py-3 rounded-lg border border-border bg-card/50 hover:border-primary/50 text-muted-foreground hover:text-primary transition-colors"
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              {t("freelance.cta.contact")}
+            </a>
+          </div>
         </motion.div>
       </div>
     </section>

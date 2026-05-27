@@ -11,4 +11,10 @@
       <image:title>Portfólio de Ricardo Röhrs — Desenvolvedor Full Stack</image:title>
     </image:image>
   </url>
+  <url>
+    <loc>https://ricardorohrs.github.io/criacao-de-sites</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
 </urlset>
