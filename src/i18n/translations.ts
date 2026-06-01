@@ -1,4 +1,4 @@
-export type Locale = "pt-BR" | "en";
+﻿export type Locale = "pt-BR" | "en";
 
 type Dictionary = Record<string, Record<Locale, string>>;
 
@@ -143,6 +143,10 @@ export const translations: Dictionary = {
     "pt-BR": "Sites rápidos, acessíveis e otimizados para SEO — com microinterações e ótima experiência em qualquer dispositivo.",
     en: "Fast, accessible, SEO-optimized sites — with microinteractions and great UX on any device.",
   },
+  "landing.websites.seo.keywords": {
+    "pt-BR": "criação de sites, desenvolvimento web, landing page, api, backend, seo, performance",
+    en: "website development, web development, landing page, api, backend, seo, performance",
+  },
   "landing.websites.ld.name": { "pt-BR": "Criação de Sites", en: "Website Development" },
   "landing.websites.ld.serviceType": { "pt-BR": "Desenvolvimento Web", en: "Web Development" },
 
@@ -274,4 +278,9 @@ export const translations: Dictionary = {
     en: "I can do ongoing improvements, small changes and continuous optimization (performance/UX/SEO) as agreed.",
   },
   "landing.websites.faq.cta": { "pt-BR": "Falar sobre meu projeto", en: "Talk about my project" },
+  "home.seo.title": { "pt-BR": "Ricardo Röhrs — Desenvolvedor Full Stack em Porto Alegre", en: "Ricardo Röhrs - Full Stack Developer | Portfolio" },
+  "home.seo.description": { "pt-BR": "Portfólio de Ricardo Röhrs, Desenvolvedor Full Stack em Porto Alegre, RS. Experiência com Laravel, Vue.js, Node.js e desenvolvimento web moderno.", en: "Full Stack Developer portfolio. Experience with web applications, APIs, and modern technologies." },
+  "home.seo.ogTitle": { "pt-BR": "Ricardo Röhrs — Desenvolvedor Full Stack em Porto Alegre", en: "Ricardo Röhrs | Full Stack Developer" },
+  "home.seo.ogDescription": { "pt-BR": "Portfólio de Ricardo Röhrs. Projetos, habilidades e contato. Experiência com Laravel, Vue.js e Node.js.", en: "Portfolio and services. Full Stack Developer with focus on performance, SEO and accessibility." },
+  "home.seo.keywords": { "pt-BR": "desenvolvedor full stack, desenvolvedor porto alegre, desenvolvedor web, react, vue.js, laravel, node.js, typescript, frontend, backend, api rest, javascript, projetos web", en: "full stack developer, web developer, react, vue.js, laravel, node.js, typescript, frontend, backend, api rest, javascript, web projects" },
 };

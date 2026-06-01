@@ -1,6 +1,8 @@
 import { motion, useReducedMotion } from "framer-motion";
+import { TypeAnimation } from "react-type-animation";
 import { CheckCircle2, ChevronRight, Code2, Gauge, Layers, Search, Sparkles, Workflow } from "lucide-react";
 import LandingNavbar from "@/components/LandingNavbar";
+import FreelanceProjectsSection from "@/components/FreelanceProjectsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ui/ScrollToTop";
@@ -22,6 +24,9 @@ const CriacaoDeSites = () => {
     ogTitle: t("landing.websites.seo.ogTitle"),
     ogDescription: t("landing.websites.seo.ogDescription"),
     ogImage: `${BASE_URL}/favicon.svg`,
+    ogType: "website",
+    twitterCard: "summary_large_image",
+    keywords: t("landing.websites.seo.keywords"),
     robots: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
     ldJson: {
       "@context": "https://schema.org",
@@ -38,12 +43,6 @@ const CriacaoDeSites = () => {
       description: t("landing.websites.seo.description"),
       offers: {
         "@type": "Offer",
-        priceCurrency: "BRL",
-        priceSpecification: {
-          "@type": "PriceSpecification",
-          price: "0",
-          priceCurrency: "BRL",
-        },
         availability: "https://schema.org/InStock",
         url: `${canonical}#contato`,
       },
@@ -156,7 +155,18 @@ const CriacaoDeSites = () => {
             >
               <span className="inline-flex items-center gap-2 font-mono text-xs tracking-widest text-primary uppercase">
                 <Sparkles className="w-4 h-4" aria-hidden="true" />
-                {t("landing.websites.kicker")}
+                <TypeAnimation
+                  sequence={[
+                    "Desenvolvimento de sites", 2500,
+                    "Desenvolvimento de sistemas", 2500,
+                    "Desenvolvimento de APIs", 2500,
+                    "Desenvolvimento de aplicativos", 2500,
+                  ]}
+                  wrapper="span"
+                  speed={shouldReduceMotion ? 75 : 25}
+                  repeat={Infinity}
+                  className="inline-block"
+                />
               </span>
 
               <h1 id="landing-title" className="text-4xl md:text-6xl lg:text-7xl font-bold font-mono tracking-tight mt-4">
@@ -179,7 +189,7 @@ const CriacaoDeSites = () => {
                 </motion.a>
 
                 <motion.a
-                  href="/#freelas"
+                  href="#freelas"
                   whileHover={shouldReduceMotion ? undefined : { y: -2 }}
                   whileTap={shouldReduceMotion ? undefined : { scale: 0.98 }}
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-border bg-card/50 hover:border-primary/50 transition-colors font-mono text-sm text-muted-foreground hover:text-primary"
@@ -226,7 +236,7 @@ const CriacaoDeSites = () => {
                   whileInView={shouldReduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: shouldReduceMotion ? 0 : 0.45, delay: shouldReduceMotion ? 0 : i * 0.06 }}
-                  className="group rounded-xl bg-card/50 p-6 hover:border-primary/50 transition-colors"
+                  className="group rounded-xl border border-border bg-card/50 p-6 hover:border-primary/50 transition-colors"
                 >
                   <div className="flex items-start gap-4">
                     <div className="w-11 h-11 rounded-lg bg-background/50 flex items-center justify-center group-hover:border-primary/50 transition-colors">
@@ -379,6 +389,7 @@ const CriacaoDeSites = () => {
           </div>
         </section>
 
+        <FreelanceProjectsSection hideCTA={true} />
         <ContactSection />
       </main>
 
