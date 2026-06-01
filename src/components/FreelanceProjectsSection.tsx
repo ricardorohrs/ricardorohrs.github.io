@@ -23,7 +23,11 @@ const freelanceProjects = [
   },
 ] as const;
 
-const FreelanceProjectsSection = () => {
+interface FreelanceProjectsSectionProps {
+  hideCTA?: boolean;
+}
+
+const FreelanceProjectsSection = ({ hideCTA = false }: FreelanceProjectsSectionProps) => {
   const shouldReduceMotion = useReducedMotion();
   const { t } = useI18n();
 
@@ -32,8 +36,6 @@ const FreelanceProjectsSection = () => {
       id="freelas"
       aria-labelledby="freelas-titulo"
       className="py-24 px-6 border-t border-border bg-card/20"
-      itemScope
-      itemType="https://schema.org/CollectionPage"
     >
       <div className="max-w-5xl mx-auto">
         <motion.div
@@ -49,9 +51,9 @@ const FreelanceProjectsSection = () => {
           <h2 id="freelas-titulo" className="text-3xl md:text-4xl font-bold font-mono mt-3">
             {t("freelance.title")}
           </h2>
-          <h3 className="text-muted-foreground text-lg mt-5 max-w-3xl leading-relaxed">
+          <p className="text-muted-foreground text-lg mt-5 max-w-3xl leading-relaxed">
             {t("freelance.subtitle")}
-          </h3>
+          </p>
         </motion.div>
         <div className="grid md:grid-cols-2 gap-6">
           {freelanceProjects.map((project, i) => (
@@ -68,8 +70,6 @@ const FreelanceProjectsSection = () => {
                 duration: shouldReduceMotion ? 0 : 0.5,
                 delay: shouldReduceMotion ? 0 : i * 0.1,
               }}
-              // whileHover={shouldReduceMotion ? undefined : { y: -6, scale: 1.02 }}
-              // whileTap={shouldReduceMotion ? undefined : { scale: 0.98 }}
               className="group relative p-0 rounded-xl border border-border bg-card hover:border-primary/50 transition-all duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background overflow-hidden flex flex-col"
             >
               {/* Project Image Container */}
@@ -84,7 +84,6 @@ const FreelanceProjectsSection = () => {
                   whileHover={shouldReduceMotion ? undefined : { scale: 1.05 }}
                   transition={{ duration: shouldReduceMotion ? 0 : 0.4, ease: "easeOut" }}
                 />
-                {/*<div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />*/}
               </div>
 
               {/* Animating background gradient on hover */}
@@ -129,23 +128,36 @@ const FreelanceProjectsSection = () => {
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
-          className="mt-16 text-center"
-        >
-          <p className="text-muted-foreground mb-6">
-            {t("freelance.cta.label")}
-          </p>
-          <a
-            href="#contato"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-primary bg-primary/10 text-primary hover:bg-primary/20 transition-all duration-300 font-mono text-sm"
-          >
-            {t("freelance.cta.button")}
-          </a>
-        </motion.div>
+        {!hideCTA && (
+          <motion.div
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="mt-16 text-center"
+            >
+              <p className="text-muted-foreground mb-6">
+                {t("freelance.cta.label")}
+              </p>
+
+              <div className="inline-flex flex-wrap items-center gap-2">
+                <a
+                  href="/criacao-de-sites"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-primary bg-primary/10 text-primary hover:bg-primary/20 transition-all duration-300 font-mono text-sm"
+                >
+                  {t("freelance.cta.button")}
+                </a>
+
+                <motion.a
+                  href="#contato"
+                  className="font-mono text-sm px-6 py-3 rounded-lg border border-border bg-card/50 hover:border-primary/50 text-muted-foreground hover:text-primary transition-colors"
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  {t("freelance.cta.contact")}
+                </motion.a>
+              </div>
+            </motion.div>
+        )}
       </div>
     </section>
   );
