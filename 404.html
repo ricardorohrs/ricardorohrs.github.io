@@ -11,6 +11,16 @@
     <!-- Meta para GitHub Pages -->
     <meta name="robots" content="noindex">
 
+    <!-- SPA fallback for GitHub Pages (supports deep links like /criacao-de-sites) -->
+    <script>
+      (function () {
+        var path = window.location.pathname || "/";
+        if (path === "/" || path === "/index.html") return;
+        var redirect = "/?redirect=" + encodeURIComponent(path + window.location.search + window.location.hash);
+        window.location.replace(redirect);
+      })();
+    </script>
+
     <style>
       /* Variáveis principais (versão escura / aproximada do seu tema) */
       :root{
