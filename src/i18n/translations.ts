@@ -153,6 +153,7 @@ export const translations: Dictionary = {
   "landing.websites.nav.services": { "pt-BR": "Serviços", en: "Services" },
   "landing.websites.nav.process": { "pt-BR": "Processo", en: "Process" },
   "landing.websites.nav.tech": { "pt-BR": "Stack", en: "Stack" },
+  "landing.websites.nav.projects": { "pt-BR": "Projetos", en: "Projects" },
   "landing.websites.nav.faq": { "pt-BR": "FAQ", en: "FAQ" },
   "landing.websites.nav.contact": { "pt-BR": "Contato", en: "Contact" },
 

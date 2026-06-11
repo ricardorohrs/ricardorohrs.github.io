@@ -1,5 +1,5 @@
 import Index from "./pages/Index";
-import CriacaoDeSites from "./pages/CriacaoDeSites";
+import ServicesPage from "./pages/ServicesPage.tsx";
 
 function normalizePathname(pathname: string) {
   const trimmed = pathname.replace(/\/+$/, "");
@@ -19,7 +19,7 @@ const App = () => {
 
   const pathname = normalizePathname(window.location.pathname);
 
-  if (pathname === "/criacao-de-sites") return <CriacaoDeSites />;
+  if (pathname === "/projetos") return <ServicesPage />;
   return <Index />;
 };
 

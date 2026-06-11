@@ -141,7 +141,7 @@ const FreelanceProjectsSection = ({ hideCTA = false }: FreelanceProjectsSectionP
 
               <div className="inline-flex flex-wrap items-center gap-2">
                 <a
-                  href="/criacao-de-sites"
+                  href="/projetos"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-primary bg-primary/10 text-primary hover:bg-primary/20 transition-all duration-300 font-mono text-sm"
                 >
                   {t("freelance.cta.button")}

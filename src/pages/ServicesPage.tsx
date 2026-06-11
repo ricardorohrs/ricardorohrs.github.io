@@ -11,11 +11,11 @@ import { useSeo } from "@/seo/useSeo";
 
 const BASE_URL = "https://ricardorohrs.github.io";
 
-const CriacaoDeSites = () => {
+const ServicesPage = () => {
   const shouldReduceMotion = useReducedMotion();
   const { t } = useI18n();
 
-  const canonical = `${BASE_URL}/criacao-de-sites`;
+  const canonical = `${BASE_URL}/projetos`;
 
   useSeo({
     title: t("landing.websites.seo.title"),
@@ -53,6 +53,7 @@ const CriacaoDeSites = () => {
     { label: t("landing.websites.nav.services"), href: "#servicos" },
     { label: t("landing.websites.nav.process"), href: "#processo" },
     { label: t("landing.websites.nav.tech"), href: "#stack" },
+    { label: t("landing.websites.nav.projects"), href: "#projetos" },
     { label: t("landing.websites.nav.faq"), href: "#faq" },
     { label: t("landing.websites.nav.contact"), href: "#contato" },
   ];
@@ -347,6 +348,10 @@ const CriacaoDeSites = () => {
           </div>
         </section>
 
+        <div id="projetos">
+          <FreelanceProjectsSection hideCTA={true} />
+        </div>
+
         {/* FAQ */}
         <section id="faq" aria-labelledby="faq-title" className="py-24 px-6 border-t border-border bg-card/20">
           <div className="max-w-4xl mx-auto">
@@ -389,7 +394,6 @@ const CriacaoDeSites = () => {
           </div>
         </section>
 
-        <FreelanceProjectsSection hideCTA={true} />
         <ContactSection />
       </main>
 
@@ -399,5 +403,5 @@ const CriacaoDeSites = () => {
   );
 };
 
-export default CriacaoDeSites;
+export default ServicesPage;
 
