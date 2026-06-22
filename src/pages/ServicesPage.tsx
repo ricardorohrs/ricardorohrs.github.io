@@ -7,47 +7,14 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ui/ScrollToTop";
 import { useI18n } from "@/i18n/context";
+import { buildServicesPageSeoConfig } from "@/seo/servicesPageSeo";
 import { useSeo } from "@/seo/useSeo";
-
-const BASE_URL = "https://ricardorohrs.github.io";
 
 const ServicesPage = () => {
   const shouldReduceMotion = useReducedMotion();
-  const { t } = useI18n();
+  const { locale, t } = useI18n();
 
-  const canonical = `${BASE_URL}/projetos`;
-
-  useSeo({
-    title: t("landing.websites.seo.title"),
-    description: t("landing.websites.seo.description"),
-    canonical,
-    ogTitle: t("landing.websites.seo.ogTitle"),
-    ogDescription: t("landing.websites.seo.ogDescription"),
-    ogImage: `${BASE_URL}/favicon.svg`,
-    ogType: "website",
-    twitterCard: "summary_large_image",
-    keywords: t("landing.websites.seo.keywords"),
-    robots: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
-    ldJson: {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      name: t("landing.websites.ld.name"),
-      serviceType: t("landing.websites.ld.serviceType"),
-      areaServed: "BR",
-      provider: {
-        "@type": "Person",
-        name: "Ricardo Röhrs",
-        url: BASE_URL,
-      },
-      url: canonical,
-      description: t("landing.websites.seo.description"),
-      offers: {
-        "@type": "Offer",
-        availability: "https://schema.org/InStock",
-        url: `${canonical}#contato`,
-      },
-    },
-  });
+  useSeo(buildServicesPageSeoConfig(locale));
 
   const navItems = [
     { label: t("landing.websites.nav.services"), href: "#servicos" },

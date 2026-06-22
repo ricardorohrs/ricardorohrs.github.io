@@ -9,13 +9,29 @@
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
     <!-- Meta para GitHub Pages -->
-    <meta name="robots" content="noindex">
+    <meta name="robots" content="noindex, nofollow">
 
     <!-- SPA fallback for GitHub Pages (supports deep links like /projetos) -->
     <script>
       (function () {
+        var INDEXABLE_ROUTES = ["/projetos"];
         var path = window.location.pathname || "/";
+        path = path.replace(/\/+$/, "");
+        if (path.endsWith("/index.html")) {
+          path = path.slice(0, -"/index.html".length) || "/";
+        }
         if (path === "/" || path === "/index.html") return;
+
+        if (INDEXABLE_ROUTES.indexOf(path) !== -1) {
+          var robots = document.querySelector('meta[name="robots"]');
+          if (robots) {
+            robots.setAttribute(
+              "content",
+              "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+            );
+          }
+        }
+
         var redirect = "/?redirect=" + encodeURIComponent(path + window.location.search + window.location.hash);
         window.location.replace(redirect);
       })();

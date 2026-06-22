@@ -1,8 +1,13 @@
 import Index from "./pages/Index";
 import ServicesPage from "./pages/ServicesPage.tsx";
 
+const SERVICES_PAGE_PATH = "/projetos";
+
 function normalizePathname(pathname: string) {
-  const trimmed = pathname.replace(/\/+$/, "");
+  let trimmed = pathname.replace(/\/+$/, "");
+  if (trimmed.endsWith("/index.html")) {
+    trimmed = trimmed.slice(0, -"/index.html".length);
+  }
   return trimmed.length ? trimmed : "/";
 }
 
@@ -19,7 +24,7 @@ const App = () => {
 
   const pathname = normalizePathname(window.location.pathname);
 
-  if (pathname === "/projetos") return <ServicesPage />;
+  if (pathname === SERVICES_PAGE_PATH) return <ServicesPage />;
   return <Index />;
 };
 

@@ -2,7 +2,7 @@
 
 **Desenvolvedor Full Stack** | Porto Alegre, RS
 
-[![Visite o Portfólio](https://img.shields.io/badge/Visite_Online-ricardorohrs.github.io-0ea5e9?style=for-the-badge)](https://ricardorohrs.github.io/portfolio)
+[![Visite o Portfólio](https://img.shields.io/badge/Visite_Online-ricardorohrs.github.io-0ea5e9?style=for-the-badge)](https://ricardorohrs.github.io)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/ricardorohrs)
 [![GitLab](https://img.shields.io/badge/GitLab-181717?style=for-the-badge&logo=gitlab)](https://gitlab.com/ricardoerohrs)
 

@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
+import { seoPagesPlugin } from "./vite-plugin-seo-pages";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -12,7 +13,7 @@ export default defineConfig({
       overlay: false,
     },
   },
-  plugins: [react()],
+  plugins: [react(), seoPagesPlugin()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
